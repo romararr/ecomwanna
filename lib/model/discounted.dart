@@ -1,23 +1,8 @@
-class Products {
-  String id;
-  String name;
-  String description;
-  String price;
-  String img;
-  double rating;
+import 'package:ecomwanna/model/products.dart';
 
+var discountedList = [
   Products(
-      {required this.id,
-      required this.name,
-      required this.description,
-      required this.price,
-      required this.img,
-      required this.rating});
-}
-
-var productList = [
-  Products(
-      id: "CN1",
+      id: "DS-CN1",
       name: "White Whale",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in hendrerit libero. Praesent eros nibh, molestie eleifend nunc eu, commodo hendrerit enim. In non elit est. Morbi sed elementum lacus, id condimentum enim. Praesent pulvinar lectus quis eros porta pellentesque. Duis venenatis ultricies dolor at eleifend. Nunc imperdiet pellentesque nulla, ac congue augue varius sed. Praesent eu metus et nisl rutrum gravida. Sed et nibh enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
@@ -25,7 +10,7 @@ var productList = [
       img: 'images/white.jpg',
       rating: 4.4),
   Products(
-      id: "CN2",
+      id: "DS-CN2",
       name: "Green Around",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in hendrerit libero. Praesent eros nibh, molestie eleifend nunc eu, commodo hendrerit enim. In non elit est. Morbi sed elementum lacus, id condimentum enim. Praesent pulvinar lectus quis eros porta pellentesque. Duis venenatis ultricies dolor at eleifend. Nunc imperdiet pellentesque nulla, ac congue augue varius sed. Praesent eu metus et nisl rutrum gravida. Sed et nibh enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
@@ -33,11 +18,19 @@ var productList = [
       img: 'images/green.jpg',
       rating: 4.8),
   Products(
-      id: "CN3",
+      id: "DS-CN3",
       name: "Orange Youth",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in hendrerit libero. Praesent eros nibh, molestie eleifend nunc eu, commodo hendrerit enim. In non elit est. Morbi sed elementum lacus, id condimentum enim. Praesent pulvinar lectus quis eros porta pellentesque. Duis venenatis ultricies dolor at eleifend. Nunc imperdiet pellentesque nulla, ac congue augue varius sed. Praesent eu metus et nisl rutrum gravida. Sed et nibh enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
       price: "Rp 78.000",
       img: 'images/orange.jpg',
       rating: 3.8),
+  Products(
+      id: "DS-CN4",
+      name: "Black 3-Sneakers",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in hendrerit libero. Praesent eros nibh, molestie eleifend nunc eu, commodo hendrerit enim. In non elit est. Morbi sed elementum lacus, id condimentum enim. Praesent pulvinar lectus quis eros porta pellentesque. Duis venenatis ultricies dolor at eleifend. Nunc imperdiet pellentesque nulla, ac congue augue varius sed. Praesent eu metus et nisl rutrum gravida. Sed et nibh enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      price: "Rp 80.000",
+      img: 'images/black.jpg',
+      rating: 3.1)
 ];

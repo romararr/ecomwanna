@@ -31,7 +31,7 @@ class DetailProduct extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      Hero(tag: product.name, child: Image.asset(product.img)),
+                      Hero(tag: product.id, child: Image.asset(product.img)),
                       SafeArea(
                           child: Padding(
                         padding: const EdgeInsets.all(8.0),

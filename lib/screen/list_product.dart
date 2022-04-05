@@ -6,13 +6,14 @@ import 'mobile/detail_product.dart';
 class ListProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-        child: Padding(
+    return Container(
       padding: const EdgeInsets.all(16.0),
       child: GridView.count(
         crossAxisCount: 2,
         crossAxisSpacing: 8,
         mainAxisSpacing: 8,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         children: productList.map((product) {
           return InkWell(
             onTap: () {
@@ -33,7 +34,7 @@ class ListProduct extends StatelessWidget {
                         topLeft: Radius.circular(10.0),
                         topRight: Radius.circular(10.0)),
                     child: Hero(
-                      tag: product.name,
+                      tag: product.id,
                       child: Image.asset(
                         product.img,
                         fit: BoxFit.cover,
@@ -59,6 +60,6 @@ class ListProduct extends StatelessWidget {
           );
         }).toList(),
       ),
-    ));
+    );
   }
 }
