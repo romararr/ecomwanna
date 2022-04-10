@@ -1,8 +1,14 @@
 import 'package:ecomwanna/model/discounted.dart';
 import 'package:ecomwanna/screen/mobile/detail_product.dart';
+import 'package:ecomwanna/screen/web/detail_product.dart';
 import 'package:flutter/material.dart';
 
 class Carousel extends StatefulWidget {
+  final double size;
+  final bool isWeb;
+
+  Carousel({required this.size, required this.isWeb});
+
   @override
   State<StatefulWidget> createState() => _CarouselState();
 }
@@ -23,7 +29,7 @@ class _CarouselState extends State<Carousel> {
     return Column(
       children: [
         SizedBox(
-          height: 250,
+          height: widget.size,
           width: double.infinity,
           child: PageView.builder(
               itemCount: discountedList.length,
@@ -36,7 +42,7 @@ class _CarouselState extends State<Carousel> {
               },
               itemBuilder: (context, pagePosition) {
                 bool active = pagePosition == activePage;
-                return items(context, pagePosition, active);
+                return items(context, pagePosition, active, widget.isWeb);
               }),
         ),
         Row(
@@ -47,7 +53,7 @@ class _CarouselState extends State<Carousel> {
   }
 }
 
-AnimatedContainer items(context, pagePosition, active) {
+AnimatedContainer items(context, pagePosition, active, isWeb) {
   double margin = active ? 5 : 10;
 
   return AnimatedContainer(
@@ -57,7 +63,11 @@ AnimatedContainer items(context, pagePosition, active) {
     child: InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return DetailProduct(product: discountedList[pagePosition]);
+          if (isWeb) {
+            return WebDetailProduct(product: discountedList[pagePosition]);
+          } else {
+            return DetailProduct(product: discountedList[pagePosition]);
+          }
         }));
       },
       child: Card(
